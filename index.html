@@ -19,7 +19,10 @@
     <div v-on:mousemove="coordenates" v-on:click="countClicks()" style="height: 300px; background-color: azure">Parametros normales</div>
     x {{ xPos }}, y {{ yPos }}, clicks {{ clicks }}
 
-    <div v-on:mousemove="coordenatesValue($event, 10)" v-on:click="clicks++" style="height: 300px; background-color: lavender">Parametros por 10</div>
+    <div v-on:mousemove="coordenatesValue($event, 10)" v-on:click.once="clicks++" style="height: 300px; background-color: lavender">
+        Parametros por 10, Click solo puede ser usado 1 vez
+        <div v-on:mousemove.stop style="height: 100px; background-color: lightgrey">Zona muerta, el evento move se detiene</div>
+    </div>
     x {{ xPos }}, y {{ yPos }}, clicks {{ clicks }}
 </div>
 
