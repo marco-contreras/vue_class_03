@@ -24,6 +24,16 @@
         <div @mousemove.stop style="height: 100px; background-color: lightgrey">Zona muerta, el evento move se detiene</div>
     </div>
     x {{ xPos }}, y {{ yPos }}, clicks {{ clicks }}
+
+    <br><br><h1>KeyUp Event</h1>
+    <input type="text" @keyup="addPress">
+    Key Pressed: {{ keyPress }}<br>
+
+    <input type="text" @keyup.enter="addEnter">
+    Enters: {{ enters }}<br>
+
+    <input type="text" @keyup="addDelete">
+    Deletes: {{ deletes }}
 </div>
 
 <script src="vue.js"></script>

@@ -5,7 +5,10 @@ var app = new Vue({
         xPos: 0,
         yPos: 0,
         params: '',
-        clicks: 0
+        clicks: 0,
+        keyPress: 0,
+        enters: 0,
+        deletes: 0
     },
     methods: {
         sumar: function () {
@@ -27,6 +30,17 @@ var app = new Vue({
         },
         countClicks(){
             this.clicks++;
+        },
+        addPress: function () {
+            this.keyPress++;
+        },
+        addEnter: function () {
+            this.enters++;
+        },
+        addDelete: function (event) {
+             if(event.keyCode == 8) {
+                this.deletes++;
+            }
         }
     }
 });
