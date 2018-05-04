@@ -4,7 +4,8 @@ var app = new Vue({
         acum: 0,
         xPos: 0,
         yPos: 0,
-        params: ''
+        params: '',
+        clicks: 0
     },
     methods: {
         sumar: function () {
@@ -19,6 +20,13 @@ var app = new Vue({
         coordenates: function (event) {
             this.xPos = event.clientX;
             this.yPos = event.clientY;
+        },
+        coordenatesValue: function (event, value) {
+            this.xPos = event.clientX * value;
+            this.yPos = event.clientY * value;
+        },
+        countClicks(){
+            this.clicks++;
         }
     }
 });

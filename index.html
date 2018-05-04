@@ -16,8 +16,11 @@
     <hr>
     <h1>Result: {{ acum }}</h1>
 
-    <div v-on:mousemove="coordenates" style="height: 300px; background-color: azure"></div>
-    x {{ xPos }}, y {{ yPos }}
+    <div v-on:mousemove="coordenates" v-on:click="countClicks()" style="height: 300px; background-color: azure">Parametros normales</div>
+    x {{ xPos }}, y {{ yPos }}, clicks {{ clicks }}
+
+    <div v-on:mousemove="coordenatesValue($event, 10)" v-on:click="clicks++" style="height: 300px; background-color: lavender">Parametros por 10</div>
+    x {{ xPos }}, y {{ yPos }}, clicks {{ clicks }}
 </div>
 
 <script src="vue.js"></script>
