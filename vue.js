@@ -10,5 +10,8 @@ var app = new Vue({
         restar: function () {
             this.acum--;
         },
+        alert: function (message) {
+            alert(message);
+        }
     }
 });
